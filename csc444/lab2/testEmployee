@@ -1,0 +1,77 @@
+import java.util.*;
+public class Polymorphism {
+    public static void main(String[] args){
+        Scanner in = new Scanner(System.in);
+        
+        System.out.print("Enter number of employees: ");
+        int size = in.nextInt();
+        
+        Employee EMP[] = new Employee[size];
+        
+        for(int i=0; i<size; i++)
+        {
+            System.out.print("\nEnter option: [1] Full time OR [2] Part time: ");
+            int opt = in.nextInt();
+            
+            System.out.print("Enter name: ");
+            String name = in.next();
+            
+            System.out.print("Enter employee number: ");
+            int emp_no = in.nextInt();
+            
+            if(opt == 1)
+            {
+                System.out.println("\nFULL TIME");
+                System.out.print("Enter basic pay: RM");
+                float basic_pay = in.nextFloat();
+                
+                System.out.print("Enter wage: RM");
+                double wage = in.nextDouble();
+                EMP[i] = new FullTime(name, emp_no, basic_pay, wage);
+            }
+            else
+            {
+                System.out.println("\nPART TIME");
+                System.out.print("Enter hours worked: ");
+                float hours_worked = in.nextFloat();
+                
+                System.out.print("Enter wage: RM");
+                double wage = in.nextDouble();
+                EMP[i] = new PartTime(name, emp_no, hours_worked, wage);
+            }
+                
+        }
+        
+        //getwage to display duluuuuu baruuuu kiraaaa 
+        //display their wages
+        /*System.out.println("\n\nWages of employees");
+        for(int i=0; i<size; i++)
+        {
+            EMP[i].getwage();
+        }*/
+        
+        
+        System.out.println("------------------");
+        System.out.print("\nFull Time \t\t Emp. No \t\t Wages of employees\n");
+        for(int i=0; i<size; i++)
+        {
+            if(EMP[i] instanceof FullTime) 
+            {
+                FullTime temp = (FullTime) EMP[i]; //object casting - to change the existing type of an object
+                temp.calcWage();
+                System.out.println(temp.toString() + " \t\t " + temp.getwage());
+            }
+        }
+        
+        System.out.print("\nPart Time \t\t Emp. No \t\t Wages of employees\n");
+        for(int i=0; i<size; i++)
+        {
+            if(EMP[i] instanceof PartTime)
+            {
+                PartTime temp = (PartTime) EMP[i]; //object casting
+                temp.calcWage();
+                System.out.println(temp.toString() + " \t\t " + temp.getwage());
+            }
+        }
+    }
+}
