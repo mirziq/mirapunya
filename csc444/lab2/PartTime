@@ -1,0 +1,21 @@
+public class PartTime extends Employee {
+    protected float hours_worked;
+    protected double wage;
+    
+    public PartTime(String name, int emp_no, float hours_worked, double wage){
+        super(name, emp_no);
+        this.hours_worked = hours_worked;
+        this.wage = wage;
+    }
+    
+    //override method
+    public void calcWage() 
+    { 
+        wage = hours_worked*wage;
+    }
+    
+    public double getwage()
+    { return wage; }
+    
+}
+
