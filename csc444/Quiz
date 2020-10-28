@@ -1,1 +1,50 @@
+import java.text.DecimalFormat;
+public class Quiz
+{
+    private String name;
+    private double quiz1, quiz2, quiz3, avg;
+    
+    public Quiz(String name, double quiz1, double quiz2, double quiz3, double avg)
+    {
+        this.name = name;
+        this.quiz1 = quiz1;
+        this.quiz2 = quiz2;
+        this.quiz3 = quiz3;
+        this.avg = avg;
+    }
+    
+    //processor
+    public double calcAvg()
+    { 
+        double avg;
+        avg = (quiz1 + quiz2 + quiz3)/3;
+        return avg;
+    }
+    
+    public double calcQuiz1()
+    {
+        double total1 = 0.0; 
+        total1 += quiz1;
+        return total1;
+    }
+    public double calcQuiz2()
+    {
+        double total2 = 0.0; 
+        total2 += quiz2;
+        return total2;
+    }
+    public double calcQuiz3()
+    {
+        double total3 = 0.0; 
+        total3 += quiz3;
+        return total3;
+    }
+    
+    public String toString()
+    {
+        DecimalFormat df = new DecimalFormat("0.00");
+        return name + " \t\t" + df.format(avg);
+    }
+  
+}
 
