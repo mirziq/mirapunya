@@ -1,0 +1,21 @@
+
+public class FullTime extends Employee{
+    protected float basic_pay;
+    protected double wage;
+    
+    public FullTime(String name, int emp_no, float basic_pay, double wage){
+        super(name, emp_no);
+        this.basic_pay = basic_pay;
+        this.wage = wage;
+    }
+    
+    //override method
+    public void calcWage()
+    { 
+        wage = wage+basic_pay;
+    }
+    
+    public double getwage()
+    { return wage; }
+    
+}
