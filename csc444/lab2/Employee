@@ -1,0 +1,24 @@
+
+public abstract class Employee {
+    
+    protected String name;
+    protected int emp_no;
+    
+    public Employee(String name, int emp_no){
+        this.name = name;
+        this.emp_no = emp_no;
+    }
+    
+    public abstract void calcWage(); //abstract method declaration
+    
+    //retriever or getter
+    public String getName()
+    { return name;}
+    public int get_empno()
+    { return emp_no;}
+    
+    public String toString()
+    {
+        return name + " \t\t " + emp_no;
+    }
+}
