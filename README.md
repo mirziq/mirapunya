@@ -1,4 +1,2 @@
 # mirapunya
-All codes on CSC444
-/csc444
-/csc574
+All codes on CSC444 and CSC574
